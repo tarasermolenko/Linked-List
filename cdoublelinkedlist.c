@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+// Taras Ermolenko 
+// Doubly linked list implementation 2021-08-27
+
 
 // List element: a list is a chain of these
 typedef struct element 
