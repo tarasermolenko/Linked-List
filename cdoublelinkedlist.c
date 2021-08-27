@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-// Taras Ermolenko 
 
 // List element: a list is a chain of these
 typedef struct element 
@@ -8,6 +7,7 @@ typedef struct element
     int val;
     struct element* next;
     struct element* prev;
+
 } element_t;
 
 
@@ -80,7 +80,9 @@ int list_append(list_t* list, int i)
     element_t* e = element_create(i);
 
     if (e == NULL)
+    {
         return 1;
+    }
 
     // only if list is emppty this runs
     // since new this is the first element in list
@@ -106,7 +108,9 @@ int list_prepend(list_t* list, int i)
     element_t* e = element_create(i);
 
     if (e == NULL)
+    {
         return 1;
+    }
 
     if (list->head == NULL) 
     {
@@ -213,6 +217,7 @@ void list_remove_first_element(list_t* list)
     {
         // only item case
         list->head = NULL;
+        list->tail = NULL;
     } else
     {
         // more items case
@@ -274,6 +279,7 @@ void list_remove_by_index(list_t* list, int i)
         {
             // only node case
             list->head = NULL;
+            list->tail = NULL;
         } else {
             // more ndoes case
             list->head = cur->next;
@@ -328,6 +334,7 @@ void list_remove_by_val(list_t* list, int data) {
         {
             // only node
             list->head = NULL;
+            list->tail = NULL;
         } else {
             // more nodes
             list->head = cur->next;
@@ -377,21 +384,7 @@ int main() {
         printf("list_create(): tail is not null!\n");
         return 1;
     }
-    list_append(list, 3);
-    list_append(list, 4);
-    list_append(list, 5);
-    list_print(list);
-    list_prepend(list, 1); 
-    list_prepend(list, 2); 
-    list_print(list); 
-    list_reverse_print(list);
-
-    list_add_at(list,1, 8);
-    list_print(list);
-    list_add_at(list,0, 9);
-    list_print(list);
-    list_add_at(list,7, 9);
-    list_print(list); 
+   
     list_remove_by_val(list, 9);
     list_print(list);
     list_remove_by_val(list, 9);
