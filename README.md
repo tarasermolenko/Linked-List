@@ -1,2 +1,2 @@
 # Linked-List
-Hope this helps :)
+Doubly Linked List Basic Class
