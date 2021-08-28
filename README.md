@@ -1,2 +1,3 @@
 # Linked-List
-Doubly Linked List Basic Class
+Doubly Linked List Class Implementation
+
